@@ -27,7 +27,7 @@ Learn more on Python Standard Library [Here](https://docs.python.org/3/library/)
 
 1. The process starts with these lines of code:
 
-  ```python
+  - ```python
   con = sqlite3.connect("./SQLiteDB.db")
   cur = con.cursor()
   ```
@@ -41,7 +41,7 @@ Learn more on Python Standard Library [Here](https://docs.python.org/3/library/)
 1. Use `pd.read_csv(<url_to_dataset>)` to load individual datasets into unique [pandas dataframes](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html).  
 1. Each dataframe is then made into an sql table by running the following line of code:
 
-  ```python
+  - ```python
   dataframe.to_sql(name_of_sql_table, con, if_exists= 'replace', index=False, method= 'multi')
   ```
 
@@ -54,7 +54,7 @@ Learn more on Python Standard Library [Here](https://docs.python.org/3/library/)
     - `index=False` specifies that the row labels should not be written as a column in our table.
     - `method = 'multi'` allows to pass multiple values in a single insert clause.  
 
-  For more on the method `pd.DataFrame.to_sql()` check the documentation [here](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sql.html)
+  - For more on the method `pd.DataFrame.to_sql()` check the documentation [here](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sql.html)
 
 1. We can now write queries to the database using sql magic by using the prefix `%sql` before each single line query, or `%%sql` before each multi-line query.
 
