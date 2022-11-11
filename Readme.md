@@ -31,6 +31,7 @@ Learn more on Python Standard Library [Here](https://docs.python.org/3/library/)
   con = sqlite3.connect("./SQLiteDB.db")
   cur = con.cursor()
   ```
+  
   - where:
 
     - `con = sqlite3.connect("SQLiteDB.db")` creates an [sqlite3 connection object](https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection) to the database in which our tables will be stored. The connection object is assigned to the variable `con`. The argument is the path to the database.  
