@@ -11,7 +11,7 @@ The project uses [pandas](https://pandas.pydata.org/pandas-docs/stable/reference
 
 ### Installing the libraries
 
-[Sqlite3](https://docs.python.org/3/library/sqlite3.html), [csv](https://docs.python.org/3/library/csv.html), and [warnings](https://docs.python.org/3/library/warnings.html) come in the Python Standard Library. Learn more on Python Standard Library [Here](https://docs.python.org/3/library/).
+[Sqlite3](https://docs.python.org/3/library/sqlite3.html), [csv](https://docs.python.org/3/library/csv.html), and [warnings](https://docs.python.org/3/library/warnings.html) come in the Python Standard Library.  
 [Pandas](https://pandas.pydata.org/pandas-docs/stable/reference/index.html), [ipython-sql](https://pypi.org/project/ipython-sql/), and [sqlalchemy](https://www.sqlalchemy.org/) are installed using the `pip install` command.
 
 ```bash
@@ -20,7 +20,8 @@ pip install sqlalchemy
 pip install ipython-sql
 ```
 
-Make sure to initialize the ipython-sql extension to enable use of sql magic methods by running `%load_ext sql`, then import the libraries used.
+Make sure to initialize the ipython-sql extension to enable use of sql magic methods by running `%load_ext sql`, then import the libraries used.  
+Learn more on Python Standard Library [Here](https://docs.python.org/3/library/).
 
 ## The Process
 
@@ -34,9 +35,10 @@ cur = con.cursor()
 `con = sqlite3.connect("SQLiteDB.db")` creates an [sqlite3 connection object](https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection) to the database in which our tables will be stored. The connection object is assigned to the variable `con`. The argument is the path to the database.  
 `cur = con.cursor()` creates a [cursor object](https://docs.python.org/3/library/sqlite3.html#sqlite3.Cursor) for operations on our database using the established connection object, `con`.  
 
-Create a connection for the ipython-sql extension to the database by running `%sql sqlite:///SQLiteDB.db`  
+Running `%sql sqlite:///SQLiteDB.db` creates a connection for the ipython-sql extension to the database.  
 
-Each individual dataset is then loaded into a [pandas dataframe](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html) using `pd.read_csv(url_to_dataset)`. Convert each dataframe to an sql table by running the code:
+`pd.read_csv(<url_to_dataset>)` loads individual datasets into unique [pandas dataframes](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html).  
+Each dataframe is then made into an sql table by running the following line of code:
 
 ```python
 dataframe.to_sql(name_of_sql_table, con, if_exists= 'replace', index=False, method= 'multi')
