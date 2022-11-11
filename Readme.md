@@ -71,7 +71,7 @@ Learn more on Python Standard Library [Here](https://docs.python.org/3/library/)
   SELECT * 
   FROM CENSUS_DATA 
   LIMIT 5;
-```
+  ```
 
 ## About
 
