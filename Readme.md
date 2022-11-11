@@ -31,10 +31,10 @@ Learn more on Python Standard Library [Here](https://docs.python.org/3/library/)
   con = sqlite3.connect("./SQLiteDB.db")
   cur = con.cursor()
   ```
-  where:
+  - where:
 
-  - `con = sqlite3.connect("SQLiteDB.db")` creates an [sqlite3 connection object](https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection) to the database in which our tables will be stored. The connection object is assigned to the variable `con`. The argument is the path to the database.  
-  - `cur = con.cursor()` creates a [cursor object](https://docs.python.org/3/library/sqlite3.html#sqlite3.Cursor) for operations on our database using the established connection object, `con`.  
+    - `con = sqlite3.connect("SQLiteDB.db")` creates an [sqlite3 connection object](https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection) to the database in which our tables will be stored. The connection object is assigned to the variable `con`. The argument is the path to the database.  
+    - `cur = con.cursor()` creates a [cursor object](https://docs.python.org/3/library/sqlite3.html#sqlite3.Cursor) for operations on our database using the established connection object, `con`.  
 
 1. Run `%sql sqlite:///SQLiteDB.db` to create a connection for the ipython-sql extension to the database.  
 
@@ -45,14 +45,14 @@ Learn more on Python Standard Library [Here](https://docs.python.org/3/library/)
   dataframe.to_sql(name_of_sql_table, con, if_exists= 'replace', index=False, method= 'multi')
   ```
 
-  where:
+  - where:
 
-  - `dataframe` is the individual dataframe.
-  - `name_of_table` is the name of the resultant table in the database.
-  - `con` is the connection to database.
-  - `if_exists= 'replace'` checks for the existence of the table in the database, and if found, drops the old table and replaces with the current table.
-  - `index=False` specifies that the row labels should not be written as a column in our table.
-  - `method = 'multi'` allows to pass multiple values in a single insert clause.  
+    - `dataframe` is the individual dataframe.
+    - `name_of_table` is the name of the resultant table in the database.
+    - `con` is the connection to database.
+    - `if_exists= 'replace'` checks for the existence of the table in the database, and if found, drops the old table and replaces with the current table.
+    - `index=False` specifies that the row labels should not be written as a column in our table.
+    - `method = 'multi'` allows to pass multiple values in a single insert clause.  
 
   For more on the method `pd.DataFrame.to_sql()` check the documentation [here](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sql.html)
 
