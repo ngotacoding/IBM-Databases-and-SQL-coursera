@@ -39,7 +39,7 @@ Learn more on Python Standard Library [Here](https://docs.python.org/3/library/)
 
 - Run `%sql sqlite:///SQLiteDB.db` to create a connection for the ipython-sql extension to the database.  
 
-- Use `pd.read_csv(<url_to_dataset>)` to load individual datasets into unique [pandas dataframes](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html).  
+- Use `pd.read_csv(<url_to_dataset>)` to load individual datasets into unique [pandas dataframes](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html). Ensure to replace _<url_to_dataset>_ with the real url to the dataset.  
 - Each dataframe is then made into an sql table by running the following line of code:
 
   ```python
@@ -49,10 +49,10 @@ Learn more on Python Standard Library [Here](https://docs.python.org/3/library/)
   - where:
 
     - `dataframe` is the individual dataframe.
-    - `name_of_table` is the name of the resultant table in the database.
+    - `name_of_sql_table` is the designated name for the resultant table in the database.
     - `con` is the connection to database.
     - `if_exists= 'replace'` checks for the existence of the table in the database, and if found, drops the old table and replaces with the current table.
-    - `index=False` specifies that the row labels should not be written as a column in our table.
+    - `index=False` specifies that the row labels should not be written as a column in the sql table.
     - `method = 'multi'` allows to pass multiple values in a single insert clause.  
 
   - For more on the method `pd.DataFrame.to_sql()` check the documentation [here](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sql.html)
